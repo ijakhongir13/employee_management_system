@@ -58,8 +58,10 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="gender">Пол:</label>
-                    <input id="gender" class="form-control" type="text" th:field="*{gender}"
-                           required autofocus="autofocus" readonly/>
+                    <select class="form-control" id="gender">
+                        <option>мужчина</option>
+                        <option>женщина</option>
+                    </select>
                 </div>
             </div>
             <div class="col-md-6">
