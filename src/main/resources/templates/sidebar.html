@@ -1,0 +1,63 @@
+<!Doctype html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="sidebar_head">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Meteoinfocom</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/employee_list.css">
+    <script type='text/javascript' src='/js/app.js'></script>
+    <script type='text/javascript'
+            src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+    <link rel="stylesheet" href="/css/registration.css">
+</head>
+
+<body oncontextmenu='return false' class='snippet-body'>
+<div id="body-pd" th:fragment="sidebar_body">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_email">
+            <a href="#" class="btn btn-primary" sec:authentication="principal.username"></a>
+        </div>
+        <div class="header_img">
+            <a href="#">
+                <img src="/img/image.jpg" alt="">
+            </a>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+
+                <a th:href="@{/}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+                        class="nav_logo-name">Meteoinfocom</span> </a>
+
+                <div class="nav_list">
+                    <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span
+                            class="nav_name">Главная страница</span> </a>
+                    <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span
+                            class="nav_name">Пользователь</span> </a> <a href="#" class="nav_link"> <i
+                        class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Действия</span>
+                </a>
+                    <a th:href="@{/employees}" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span
+                            class="nav_name">Сотрудники</span></a>
+                    <a th:href="@{/registration}" class="nav_link"> <i class='bx bx-folder nav_icon'></i>
+                        <span class="nav_name">Регистрация</span> </a>
+                    <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
+                            class="nav_name">Статистика</span> </a>
+                </div>
+
+            </div>
+            <a sec:authorize="isAuthenticated()" th:href="@{/logout}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                    class="nav_name">Выход</span> </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <!--Container Main end-->
+</div>
+</body>
+
+</html>

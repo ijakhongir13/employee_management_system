@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="sidebar :: sidebar_head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/employee_by_id">
+</head>
+<body>
+<div th:insert="sidebar :: sidebar_body"></div>
+<br>
+<div class="container">
+    <form action="#" method="get" th:object="${employee}">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input id="id" class="form-control" type="hidden" th:field="*{id}"
+                       required autofocus="autofocus"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="firstName">Имя:</label>
+                    <input id="firstName" class="form-control" type="text" th:field="*{firstName}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lastName">Фамилия:</label>
+                    <input id="lastName" class="form-control" type="text" th:field="*{lastName}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="patronymic">Отчество:</label>
+                    <input id="patronymic" class="form-control" type="text" th:field="*{patronymic}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input id="email" class="form-control" type="text" th:field="*{email}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="gender">Пол:</label>
+                    <input id="gender" class="form-control" type="text" th:field="*{gender}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dateOfBirth">Дата рождения:</label>
+                    <input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inn">ИНН:</label>
+                    <input id="inn" class="form-control" type="text" th:field="*{inn}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inps">ИНПС:</label>
+                    <input id="inps" class="form-control" type="text" th:field="*{inps}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="passportNo">Серия/Номер пасспорта:</label>
+                    <input id="passportNo" class="form-control" type="text" th:field="*{passportNo}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phoneNo">Номер телефона:</label>
+                    <input id="phoneNo" class="form-control" type="text" th:field="*{phoneNo}"
+                           required autofocus="autofocus" readonly/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

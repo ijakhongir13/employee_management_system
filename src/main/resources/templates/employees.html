@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="sidebar :: sidebar_head">
+    <meta charset="UTF-8">
+    <title>Сотрудники</title>
+    <link rel="stylesheet" href="/css/employee_list.css">
+</head>
+<body>
+<div th:insert="sidebar :: sidebar_body"></div>
+<div class="container" th:fragment="employees">
+    <h2>Список сотрудников</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">Номер</div>
+            <div class="col col-2">Имя</div>
+            <div class="col col-3">Электронная почта</div>
+            <div class="col col-4">Действия</div>
+        </li>
+        <li class="table-row" th:each="employee : ${employees}">
+            <div class="col col-1" data-label="Employee Id" th:text="${employee.id}"></div>
+            <div class="col col-2" data-label="Employee Name" th:text="${employee.firstName}  + ' ' + ${employee.lastName}"></div>
+            <div class="col col-3" data-label="Email" th:text="${employee.email}"></div>
+            <div class="col col-4" data-label="Actions">
+                <a th:href="@{employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
