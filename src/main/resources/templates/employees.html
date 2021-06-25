@@ -16,14 +16,15 @@
             <div class="col col-3">Электронная почта</div>
             <div class="col col-4">Действия</div>
         </li>
-        <li class="table-row" th:each="employee : ${employees}">
-            <div class="col col-1" data-label="Employee Id" th:text="${employee.id}"></div>
+        <li class="table-row" th:each="employee, status : ${employees}">
+            <div class="col col-1" data-label="Employee Id" th:text="${status.index + 1}"></div>
             <div class="col col-2" data-label="Employee Name" th:text="${employee.firstName}  + ' ' + ${employee.lastName}"></div>
             <div class="col col-3" data-label="Email" th:text="${employee.email}"></div>
             <div class="col col-4" data-label="Actions">
                 <a th:href="@{employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary">Подробнее</a>
             </div>
         </li>
+        <a th:href = "@{/employees/addNewEmployeeForm}" class="btn btn-primary mb-3">Добавить сотрудника</a>
     </ul>
 </div>
 </body>

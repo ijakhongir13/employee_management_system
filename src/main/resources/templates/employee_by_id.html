@@ -12,13 +12,17 @@
 <div th:insert="sidebar :: sidebar_body"></div>
 <br>
 <div class="container">
-    <div th:object="${employee}">
-        <div class="col-md-6">
-            <div class="form-group">
-                <input id="id" class="form-control" type="hidden" th:field="*{id}"
-                       required autofocus="autofocus"/>
+    <div class="mb-5" th:object="${employee}">
+        <div class="row">
+            <div class="mb-2"> <img src="/img/image.jpg" class="img-rounded" alt=""> </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="id" class="form-control" type="hidden" th:field="*{id}"
+                           required autofocus="autofocus"/>
+                </div>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -67,7 +71,7 @@
                 <div class="form-group">
                     <label for="dateOfBirth">Дата рождения:</label>
                     <input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}"
-                           required autofocus="autofocus" readonly              />
+                           required autofocus="autofocus" readonly/>
                 </div>
             </div>
         </div>
@@ -105,7 +109,9 @@
                 </div>
             </div>
         </div>
+        <a th:href="@{/employees}" class="btn btn-primary mt-3">Назад</a>
     </div>
+
 </div>
 </body>
 </html>
