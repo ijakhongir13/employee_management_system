@@ -7,13 +7,12 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/employee_by_id">
 </head>
 <body>
 <div th:insert="sidebar :: sidebar_body"></div>
 <br>
 <div class="container">
-    <form action="#" method="get" th:object="${employee}">
+    <div th:object="${employee}">
         <div class="col-md-6">
             <div class="form-group">
                 <input id="id" class="form-control" type="hidden" th:field="*{id}"
@@ -58,7 +57,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="gender">Пол:</label>
-                    <select class="form-control" id="gender">
+                    <select class="form-control" id="gender" readonly="true">
                         <option>мужчина</option>
                         <option>женщина</option>
                     </select>
@@ -68,7 +67,7 @@
                 <div class="form-group">
                     <label for="dateOfBirth">Дата рождения:</label>
                     <input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}"
-                           required autofocus="autofocus" readonly/>
+                           required autofocus="autofocus" readonly              />
                 </div>
             </div>
         </div>
@@ -106,7 +105,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

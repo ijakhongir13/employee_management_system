@@ -20,6 +20,10 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public void saveEmployee(Employee employee) {
+        this.employeeRepository.save(employee);
+    }
+
     public Employee getEmployeeById(long id){
         Optional<Employee> optional = employeeRepository.findById(id);
         Employee employee = null;
