@@ -109,9 +109,11 @@
                 </div>
             </div>
         </div>
+        <br>
+        <a th:href="@{/employees/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Редактировать</a>
+        <br>
         <a th:href="@{/employees}" class="btn btn-primary mt-3">Назад</a>
     </div>
-
 </div>
 </body>
 </html>

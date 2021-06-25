@@ -71,11 +71,13 @@ a {
 .header .header_email .btn-primary{
     background-color: #5891ff;
     border-radius: 10px;
+    border-color: #5891ff;
     font-weight: bold;
 }
 form .btn-primary{
     background-color: #5891ff;
     border-radius: 10px;
+    border-color: #5891ff;
     font-weight: bold;
 }
 .l-navbar {
@@ -172,7 +174,16 @@ form .btn-primary{
 .container .btn-primary{
     background-color: #5891ff;
     border-radius: 10px;
+    border-color: #5891ff;
     font-weight: bold;
+}
+.container .row .form-group label{
+    font-weight: bold;
+}
+.container .row .form-group .btn-success{
+    font-weight: bold;
+    border-radius: 10px;
+    border-color: #5891ff;
 }
 
 @media screen and (min-width: 768px) {

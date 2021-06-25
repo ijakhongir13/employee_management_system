@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="sidebar :: sidebar_head">
+  <meta charset="UTF-8">
+  <title>Meteoinfocom</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="sidebar :: sidebar_body"></div>
+<div class="container">
+  <h2>Редактировать данные</h2>
+  <br>
+  <form th:action="@{/employees/saveEmployee}" th:object="${employee}" method="POST">
+    <input type="hidden" th:field="*{id}" />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstName">Имя:</label>
+          <input id="firstName" type="text" th:field="*{firstName}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lastName">Фамилия:</label>
+          <input id="lastName" type="text" th:field="*{lastName}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="patronymic">Отчество:</label>
+          <input id="patronymic" type="text" th:field="*{patronymic}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email">Электронная почта:</label>
+          <input id="email" type="email" th:field="*{email}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="gender">Пол:</label>
+          <input id="gender" type="text" th:field="*{gender}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="dateOfBirth">Дата рождения:</label>
+          <input id="dateOfBirth" type="text" th:field="*{dateOfBirth}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="inn">ИНН:</label>
+          <input id="inn" type="text" th:field="*{inn}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="inps">ИНПС:</label>
+          <input id="inps" type="text" th:field="*{inps}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="passportNo">Серия/Номер пасспорта:</label>
+          <input id="passportNo" type="text" th:field="*{passportNo}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="phoneNo">Номер телефона:</label>
+          <input id="phoneNo" type="text" th:field="*{phoneNo}" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+  </form>
+  <a th:href="@{/employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary mt-3 mb-3">Назад</a>
+</div>
+</body>
+</html>
