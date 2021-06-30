@@ -9,10 +9,12 @@ body{
 .row .success{
     margin-top: 30px;
 }
-.row .success .alert-info{
-    background-color: rgb(27, 194, 139);
-    color: white;
+.row .success .alert-success{
+    text-align: center;
     font-weight: bold;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 10px;
 }
 .row .form-group .btn-success{
     background-color: rgb(87, 145, 255);
