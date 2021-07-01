@@ -56,10 +56,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="gender">Пол:</label>
-                    <select class="form-control" id="gender" readonly="true">
-                        <option>мужчина</option>
-                        <option>женщина</option>
-                    </select>
+                    <input id="gender" class="form-control" type="text" th:field="*{gender}" readonly/>
                 </div>
             </div>
             <div class="col-md-6">

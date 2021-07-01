@@ -42,12 +42,16 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" th:field="*{gender}" placeholder="Пол" class="form-control mb-4 col-4" required autofocus="autofocus">
+                    <select th:field="*{gender}" class="form-select" required>
+                        <option value="" selected disabled>Пол</option>
+                        <option th:value="мужчина" th:text="мужчина"></option>
+                        <option th:value="женщина" th:text="женщина"></option>
+                    </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" th:field="*{dateOfBirth}" placeholder="Дата рождения" class="form-control mb-4 col-4" required autofocus="autofocus">
+                    <input type="date" th:field="*{dateOfBirth}" placeholder="Дата рождения" class="form-control mb-4 col-4" required autofocus="autofocus">
                 </div>
             </div>
         </div>
