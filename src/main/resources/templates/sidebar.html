@@ -44,17 +44,17 @@
                         <span class="nav_name">Действия</span>
                     </a>
                     <div class="collapse" id="collapseExample">
-                        <div class="ps-4">
-                            <a class="nav_link" href="#">
-                                <i class="bx bx-user-plus nav_icon"></i>
-                                <span class="nav_name">Добавить сотрудника</span>
+                        <div class="">
+                            <a class="nav_link" th:href = "@{/employees/addNewEmployeeForm}">
+                                <i class="bx bx-minus nav_icon"> <i class="bx bx-user-plus nav_icon"></i></i>
+                                <span class="nav_name">Добавить <br> сотрудника</span>
                             </a>
                             <a class="nav_link" href="#">
-                                <i class="bx bx-user-x nav_icon"></i>
-                                <span class="nav_name">Уволить сотрудника</span>
+                                <i class="bx bx-minus nav_icon"> <i class="bx bx-user-x nav_icon"></i></i>
+                                <span class="nav_name">Уволить <br> сотрудника</span>
                             </a>
                             <a class="nav_link" href="#">
-                                <i class="bx bx-blanket nav_icon"></i>
+                                <i class="bx bx-minus nav_icon"> <i class="bx bx-blanket nav_icon"></i></i>
                                 <span class="nav_name">Прочее</span>
                             </a>
                         </div>
