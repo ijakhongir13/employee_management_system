@@ -41,11 +41,14 @@
         </div>
         <div class="row">
             <div class="col-md-6">
+                <style>
+                    select:invalid { color: gray; }
+                </style>
                 <div class="form-group">
                     <select th:field="*{gender}" class="form-select" required>
-                        <option value="" selected disabled>Пол</option>
-                        <option th:value="мужчина" th:text="мужчина"></option>
-                        <option th:value="женщина" th:text="женщина"></option>
+                        <option value="" selected>Пол</option>
+                        <option th:value="мужчина">мужчина</option>
+                        <option th:value="женщина">женщина</option>
                     </select>
                 </div>
             </div>

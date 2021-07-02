@@ -9,6 +9,7 @@ body{
 }
 .registration-form .alert {
     border-radius: 30px;
+    font-weight: bold;
 }
 /*.registration-form .error .alert-danger{
     max-width: fit-content;
