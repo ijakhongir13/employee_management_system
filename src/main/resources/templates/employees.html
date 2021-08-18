@@ -22,6 +22,7 @@
             <div class="col col-3" data-label="Email" th:text="${employee.email}"></div>
             <div class="col col-4" data-label="Actions">
                 <a th:href="@{employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary">Подробнее</a>
+                <a th:href="@{employees/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Удалить</a>
             </div>
         </li>
     </ul>

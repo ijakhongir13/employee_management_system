@@ -186,6 +186,24 @@ form .btn-primary{
     border-color: #5891ff;
 }
 
+.bordered {
+    border: 2px solid #ccc !important;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+}
+
+.remove-float {
+    float: none !important;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+}
+
+.width-auto {
+    width: auto !important;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;

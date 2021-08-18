@@ -61,6 +61,12 @@ h2 small {
     border-radius: 10px;
     font-weight: bold;
 }
+.responsive-table .btn-danger{
+    background-color: #F45F7E;
+    border-color: #F45F7E;
+    border-radius: 10px;
+    font-weight: bold;
+}
 @media all and (max-width: 767px) {
     .responsive-table .table-header {
         display: none;

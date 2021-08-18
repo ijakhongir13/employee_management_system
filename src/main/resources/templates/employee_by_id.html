@@ -3,14 +3,12 @@
 <head th:insert="sidebar :: sidebar_head">
     <meta charset="UTF-8">
     <title>Meteoinfocom</title>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
 <div th:insert="sidebar :: sidebar_body"></div>
 <br>
+
 <div class="container">
     <div class="mb-5" th:object="${employee}">
         <div class="row">
@@ -22,80 +20,95 @@
             </div>
         </div>
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="firstName">Имя:</label>
-                    <input id="firstName" class="form-control" type="text" th:field="*{firstName}" readonly/>
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Личная информация</legend>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="firstName">Имя:</label>
+                        <input id="firstName" class="form-control" type="text" th:field="*{firstName}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="lastName">Фамилия:</label>
+                        <input id="lastName" class="form-control" type="text" th:field="*{lastName}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="patronymic">Отчество:</label>
+                        <input id="patronymic" class="form-control" type="text" th:field="*{patronymic}" readonly/>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="lastName">Фамилия:</label>
-                    <input id="lastName" class="form-control" type="text" th:field="*{lastName}" readonly/>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="email">Электронная почта:</label>
+                        <input id="email" class="form-control" type="text" th:field="*{email}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="gender">Пол:</label>
+                        <input id="gender" class="form-control" type="text" th:field="*{gender}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dateOfBirth">Дата рождения:</label>
+                        <input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}" readonly/>
+                    </div>
                 </div>
             </div>
-        </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inn">ИНН:</label>
+                        <input id="inn" class="form-control" type="text" th:field="*{inn}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inps">ИНПС:</label>
+                        <input id="inps" class="form-control" type="text" th:field="*{inps}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="passportNo">Серия/Номер пасспорта:</label>
+                        <input id="passportNo" class="form-control" type="text" th:field="*{passportNo}" readonly/>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phoneNo">Номер телефона:</label>
+                        <input id="phoneNo" class="form-control" type="text" th:field="*{phoneNo}" readonly/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nationality">Национальность:</label>
+                        <input id="nationality" class="form-control" type="text" th:field="*{nationality}" readonly/>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </fieldset>
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="patronymic">Отчество:</label>
-                    <input id="patronymic" class="form-control" type="text" th:field="*{patronymic}" readonly/>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="email">Электронная почта:</label>
-                    <input id="email" class="form-control" type="text" th:field="*{email}" readonly/>
-                </div>
-            </div>
-        </div>
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Семейное положение</legend>
+        </fieldset>
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="gender">Пол:</label>
-                    <input id="gender" class="form-control" type="text" th:field="*{gender}" readonly/>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="dateOfBirth">Дата рождения:</label>
-                    <input id="dateOfBirth" class="form-control" type="text" th:field="*{dateOfBirth}" readonly/>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="inn">ИНН:</label>
-                    <input id="inn" class="form-control" type="text" th:field="*{inn}" readonly/>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="inps">ИНПС:</label>
-                    <input id="inps" class="form-control" type="text" th:field="*{inps}" readonly/>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="passportNo">Серия/Номер пасспорта:</label>
-                    <input id="passportNo" class="form-control" type="text" th:field="*{passportNo}" readonly/>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="phoneNo">Номер телефона:</label>
-                    <input id="phoneNo" class="form-control" type="text" th:field="*{phoneNo}" readonly/>
-                </div>
-            </div>
-        </div>
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Образование</legend>
+        </fieldset>
         <br>
         <a th:href="@{/employees/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Редактировать</a>
         <br>

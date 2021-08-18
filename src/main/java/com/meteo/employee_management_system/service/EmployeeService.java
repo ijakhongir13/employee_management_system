@@ -24,6 +24,10 @@ public class EmployeeService {
         this.employeeRepository.save(employee);
     }
 
+    public void deleteEmployeeById(Long id) {
+        this.employeeRepository.deleteById(id);
+    }
+
     public Employee getEmployeeById(long id){
         Optional<Employee> optional = employeeRepository.findById(id);
         Employee employee = null;
