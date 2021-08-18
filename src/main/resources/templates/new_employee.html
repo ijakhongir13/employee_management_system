@@ -8,6 +8,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/new_employee.css">
 </head>
+
 <body>
 <div th:insert="sidebar :: sidebar_body"></div>
 <br>
@@ -15,89 +16,187 @@
     <h2 class="mt-2">Добавить сотрудника</h2>
     <br>
     <form th:action="@{/employees/saveEmployee}" th:object="${employee}" method="POST">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{firstName}" placeholder="Имя" class="form-control mb-4 col-4" required autofocus="autofocus">
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Личная информация</legend>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{firstName}" placeholder="Имя" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{lastName}" placeholder="Фамилия" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{patronymic}" placeholder="Отчество" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{lastName}" placeholder="Фамилия" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="email" th:field="*{email}" placeholder="Электронная почта" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <style>
+                        select:invalid {
+                            color: gray;
+                        }
+                    </style>
+                    <div class="form-group">
+                        <select th:field="*{gender}" class="form-select" required>
+                            <option value="" selected>Пол</option>
+                            <option th:value="мужчина">мужчина</option>
+                            <option th:value="женщина">женщина</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{dateOfBirth}" placeholder="Дата рождения" onfocus="(this.type='date')"
+                               onblur="(this.type='text')" class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{patronymic}" placeholder="Отчество" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{inn}" placeholder="ИНН" class="form-control mb-4 col-4" required
+                               autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{inps}" placeholder="ИНПС" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{passportNo}" placeholder="Серия/Номер пасспорта"
+                               class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="email" th:field="*{email}" placeholder="Электронная почта" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{phoneNo}" placeholder="Номер телефона" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{nationality}" placeholder="Национальность" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{workDepartment}" placeholder="Рабочий отдел"
+                               class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <style>
-                    select:invalid { color: gray; }
-                </style>
-                <div class="form-group">
-                    <select th:field="*{gender}" class="form-select" required>
-                        <option value="" selected>Пол</option>
-                        <option th:value="мужчина">мужчина</option>
-                        <option th:value="женщина">женщина</option>
-                    </select>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{workPosition}" placeholder="Должность" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="date" th:field="*{dateOfBirth}" placeholder="Дата рождения" class="form-control mb-4 col-4" required autofocus="autofocus">
+        </fieldset>
+        <br>
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Образование</legend>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduInstitution}" placeholder="Учебное заведение"
+                               class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduCountry}" placeholder="Страна обучения" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduSpeciality}" placeholder="Специальность" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{inn}" placeholder="ИНН" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <div class="row">
+                <div class="col-md-4">
+                    <style>
+                        select:invalid {
+                            color: gray;
+                        }
+                    </style>
+                    <div class="form-group">
+                        <select th:field="*{eduType}" class="form-select" required>
+                            <option value="" selected>Тип обучения</option>
+                            <option th:value="Бакалаврият">Бакалаврият</option>
+                            <option th:value="Магистратура">Магистратура</option>
+                            <option th:value="Докторантура">Докторантура</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduAdmissionDate}" placeholder="Дата поступления"
+                               onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduGraduationDate}" placeholder="Дата окончания"
+                               onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control mb-4 col-4"
+                               required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{inps}" placeholder="ИНПС" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{eduDiplomaSpecs}" placeholder="Серия диплома"
+                               class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{passportNo}" placeholder="Серия/Номер пасспорта" class="form-control mb-4 col-4" required autofocus="autofocus">
+            <br>
+        </fieldset>
+        <br>
+        <fieldset class="bordered">
+            <legend class="remove-float width-auto">Семейное Положение</legend>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" th:field="*{maritalStatus}" placeholder="Семейное положение"
+                               class="form-control mb-4 col-4" required autofocus="autofocus">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{nationality}" placeholder="Национальность" class="form-control mb-4 col-4" required autofocus="autofocus">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" th:field="*{phoneNo}" placeholder="Номер телефона" class="form-control mb-4 col-4" required autofocus="autofocus">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-
-                </div>
-            </div>
-        </div>
+        </fieldset>
+        <br>
         <button type="submit" class="btn btn-primary">Сохранить сотрудника</button>
         <br>
         <a th:href="@{/employees}" class="btn btn-primary mt-3">Назад</a>
     </form>
+    <br>
 </div>
 </body>
 </html>

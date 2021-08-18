@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:insert="sidebar :: sidebar_head">
   <meta charset="UTF-8">
   <title>Meteoinfocom</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
 <div th:insert="sidebar :: sidebar_body"></div>
 <div class="container">
@@ -13,82 +15,182 @@
   <br>
   <form th:action="@{/employees/saveEmployee}" th:object="${employee}" method="POST">
     <input type="hidden" th:field="*{id}" />
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="firstName">Имя:</label>
-          <input id="firstName" type="text" th:field="*{firstName}" class="form-control mb-4 col-4" required>
+    <fieldset class="bordered">
+      <legend class="remove-float width-auto">Личная информация</legend>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="firstName">Имя:</label>
+            <input id="firstName" type="text" th:field="*{firstName}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="lastName">Фамилия:</label>
+            <input id="lastName" type="text" th:field="*{lastName}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="patronymic">Отчество:</label>
+            <input id="patronymic" type="text" th:field="*{patronymic}" class="form-control mb-4 col-4" required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="lastName">Фамилия:</label>
-          <input id="lastName" type="text" th:field="*{lastName}" class="form-control mb-4 col-4" required>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="email">Электронная почта:</label>
+            <input id="email" type="email" th:field="*{email}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="gender">Пол:</label>
+            <select th:field="*{gender}" class="form-select" id="gender" required>
+              <option th:value="мужчина" th:text="мужчина"></option>
+              <option th:value="женщина" th:text="женщина"></option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="dateOfBirth">Дата рождения:</label>
+            <input id="dateOfBirth" type="text" th:field="*{dateOfBirth}" onfocus="(this.type='date')"
+                   onblur="(this.type='text')" class="form-control mb-4 col-4" required>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="patronymic">Отчество:</label>
-          <input id="patronymic" type="text" th:field="*{patronymic}" class="form-control mb-4 col-4" required>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="inn">ИНН:</label>
+            <input id="inn" type="text" th:field="*{inn}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="inps">ИНПС:</label>
+            <input id="inps" type="text" th:field="*{inps}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="passportNo">Серия/Номер пасспорта:</label>
+            <input id="passportNo" type="text" th:field="*{passportNo}" class="form-control mb-4 col-4" required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="email">Электронная почта:</label>
-          <input id="email" type="email" th:field="*{email}" class="form-control mb-4 col-4" required>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="phoneNo">Номер телефона:</label>
+            <input id="phoneNo" type="text" th:field="*{phoneNo}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="nationality">Национальность</label>
+            <input id="nationality" type="text" th:field="*{nationality}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="workDepartment">Рабочий отдел</label>
+            <input id="workDepartment" type="text" th:field="*{workDepartment}" class="form-control mb-4 col-4"
+                   required>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="gender">Пол:</label>
-          <select th:field="*{gender}" class="form-select" id="gender" required>
-            <option th:value="мужчина" th:text="мужчина"></option>
-            <option th:value="женщина" th:text="женщина"></option>
-          </select>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="workPosition">Должность</label>
+            <input id="workPosition" type="text" th:field="*{workPosition}" class="form-control mb-4 col-4" required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="dateOfBirth">Дата рождения:</label>
-          <input id="dateOfBirth" type="text" th:field="*{dateOfBirth}" class="form-control mb-4 col-4" required>
+    </fieldset>
+    <br>
+    <fieldset class="bordered">
+      <legend class="remove-float width-auto">Образование</legend>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduInstitution">Учебное заведение</label>
+            <input id="eduInstitution" type="text" th:field="*{eduInstitution}" class="form-control mb-4 col-4"
+                   required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduCountry">Страна обучения</label>
+            <input id="eduCountry" type="text" th:field="*{eduCountry}" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduSpeciality">Специальность</label>
+            <input id="eduSpeciality" type="text" th:field="*{eduSpeciality}" class="form-control mb-4 col-4"
+                   required>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="inn">ИНН:</label>
-          <input id="inn" type="text" th:field="*{inn}" class="form-control mb-4 col-4" required>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduType">Тип обучения:</label>
+            <select th:field="*{eduType}" class="form-select" id="eduType" required>
+              <option th:value="Бакалаврият" th:text="Бакалаврият"></option>
+              <option th:value="Магистратура" th:text="Магистратура"></option>
+              <option th:value="Докторантура" th:text="Докторантура"></option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduAdmissionDate">Дата поступления:</label>
+            <input id="eduAdmissionDate" type="text" th:field="*{eduAdmissionDate}" onfocus="(this.type='date')"
+                   onblur="(this.type='text')" class="form-control mb-4 col-4" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduGraduationDate">Дата окончания:</label>
+            <input id="eduGraduationDate" type="text" th:field="*{eduGraduationDate}" onfocus="(this.type='date')"
+                   onblur="(this.type='text')" class="form-control mb-4 col-4" required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="inps">ИНПС:</label>
-          <input id="inps" type="text" th:field="*{inps}" class="form-control mb-4 col-4" required>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="eduDiplomaSpecs">Серия диплома</label>
+            <input id="eduDiplomaSpecs" type="text" th:field="*{eduDiplomaSpecs}" class="form-control mb-4 col-4"
+                   required>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="passportNo">Серия/Номер пасспорта:</label>
-          <input id="passportNo" type="text" th:field="*{passportNo}" class="form-control mb-4 col-4" required>
+    </fieldset>
+    <br>
+    <fieldset class="bordered">
+      <legend class="remove-float width-auto">Семейное положение</legend>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="maritalStatus">Семейное положение</label>
+            <input id="maritalStatus" type="text" th:field="*{maritalStatus}" class="form-control mb-4 col-4"
+                   required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="phoneNo">Номер телефона:</label>
-          <input id="phoneNo" type="text" th:field="*{phoneNo}" class="form-control mb-4 col-4" required>
-        </div>
-      </div>
-    </div>
+    </fieldset>
+    <br>
     <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    <br>
+    <a th:href="@{/employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary mt-3 mb-3">Назад</a>
   </form>
-  <a th:href="@{/employees/getEmployeeById/{id}(id=${employee.id})}" class="btn btn-primary mt-3 mb-3">Назад</a>
+  <br>
 </div>
 </body>
 </html>
